@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="filter">
+
+<head>
+  <title>filter</title>
+  <meta charset="utf-8">
+  <base href="/" />
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/ngApp/css/site.css"/>
+</head>
+
+<body ng-controller = "CarsController as model">
+
+  <div class="container">
+        <h1>filter</h1>
+        <div>
+          <ul>
+            <li ng-repeat="item in model.model|filter:{name:'s'}">{{item.name}}</li>
+        <!-- <li ng-repeat="item in model.model">  Change to this if you want to use currency and date filters to format the model price and dateCreated properties-->
+        <!-- {{item.name}} - {{item.price|currency}}, {{item.dateCreated|date:"fullDate"}}  Here is how you format the items and properties to display how you wish.--> 
+          </ul>
+
+
+        </div>
+        <hr />
+
+        <ui-view></ui-view>
+  </div>
+
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="/bower_components/angular-touch/angular-touch.min.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+  <script src="/ngApp/app.js"></script>
+  <script src="/ngApp/controllers/controllers.js"></script>
+  <script src="/ngApp/services/services.js"></script>
+
+</body>
+
+</html>
